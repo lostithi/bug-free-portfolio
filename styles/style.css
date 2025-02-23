@@ -1,104 +1,243 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-  }
-  
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: transparent;
-    padding: 20px 50px;
-    z-index: 100;
-  }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-  }
-  
-  .nav-links li a {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  background-size: auto;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.alice-regular {
+  font-family: "Alice", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.navbar {
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  padding: 20px 50px;
+  z-index: 100;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-container img {
+  height: 45px;
+  width: auto; /* Adjust width based on height */
+  border-radius: 10px; 
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  padding-right: 180px;
+}
+
+.nav-links li a {
+  color: #d9d9d9;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ff7e5f ;
+}
+
+/* Change text color to black when inside About section */
+.navbar.black-text .nav-links li a {
+  color: black;
+}
+
+/* Change text back to the initial color in Projects section */
+.navbar.default-text .nav-links li a {
+  color: #d9d9d9;
+}
+.home-section {
+  height: 100vh; /* Full viewport height */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  text-align: center;
+  color: #a27e7e;
+  flex-direction: column;
+  padding-top: 120px;
+  position: relative;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.home-container {
+    position: relative;
+    z-index: 1;
     color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-  }
-  
-  .nav-links li a:hover {
-    color: #007BFF;
-  }
-  
-  .home-section {
-    background: url('hero-background.jpg') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
+    padding: 0 20px;
+    height: 100%; /* Ensure it fills the entire height of the parent */
+    display: flex; /* If you want content to center vertically within */
     flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 100px;
-  }
-  
-  .home-container h1 {
-    font-size: 3rem;
-  }
-  
-  .cta-button {
-    margin-top: 20px;
-    padding: 15px 30px;
-    background-color: #007BFF;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    border-radius: 5px;
-  }
-  
-  .about-section, .projects-section, .contact-section {
-    padding: 80px 20px;
-    text-align: center;
-  }
-  
-  .projects-section h2, .about-section h2, .contact-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-  }
-  
-  .projects-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-  }
-  
-  .project-card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-10px);
-  }
-  
-  footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-  }
-  
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+}
+
+.home-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure the background image covers the full width */
+  height: 100%; /* Ensure the background image covers the full height */
+  opacity: 0.6;  /* Optional: Adjust transparency */
+  z-index: -1; /* Sends the image to the background */
+}
+
+.home-container h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.home-container p {
+  font-size: 1.5rem;
+}
+
+
+/* About, Projects, Contact Section Styling */
+.about-section, .projects-section, .contact-section {
+  padding: 80px 20px;
+  text-align: center;
+  color:#d9d9d9;
+}
+
+.projects-section h2, .about-section h2, .contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.about-section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Makes the section fill the full viewport height */
+  flex-direction: column;
+}
+
+.about-container {
+  max-width: 800px; /* Limits the width of the container */
+  width: 100%;
+  padding: 30px;
+  background-color: white; /* Adds a background color to the container */
+  border-radius: 10px; /* Rounds the corners */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Adds shadow for better separation */
+  text-align: left; /* Aligns text to the left for better readability */
+  font-size: 1.2rem; /* Sets font size */
+}
+
+.about-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: black; /* Adds a pop of color to the heading */
+}
+
+.about-paragraph {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
+  text-align: justify; /* Ensures the paragraph is evenly aligned */
+}
+
+.about-container p {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+}
+
+/* .project-card {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+} */
+.project-card {
+  font-family: monospace;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3sease;
+  color: white;
+}
+.project-card img {
+  width: 100%;  /* Makes the image take full width of the card */
+  height: 200px; /* Set a fixed height */
+  object-fit: cover; /* Ensures the image fills the space while maintaining aspect ratio */
+  border-radius: 5px; /* Optional: adds rounded corners */
+}
+.project-card:hover {
+  transform: translateY(-10px);
+}
+.contact-section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #333;
+  color: #d9d9d9;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-container p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.social-icon img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s;
+}
+
+.social-icon img:hover {
+  transform: scale(1.1);
+}
+
+/* Footer Styling */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: #d9d9d9;
+}
