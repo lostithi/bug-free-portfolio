@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="files/logopic.png">
+    <title>Legalithi</title>
+    <link rel="stylesheet" href="styles/style2.css">
+    <script src="https://cdn.jsdelivr.net/npm/scrollreveal"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html">
+                <img src="files/logo.png" alt="LOGO" class="logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <section id="home" class="home-section">
+            <div class="home-container">
+                <h1>BLOGS</h1>
+                <p>Some of my blogs are listed here:)</p>
+                <div class="blogs-container">
+                    <div class="project-card">
+                        <div id="medium-posts"></div>
+                        <script>
+                            fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@legalithi")
+                                .then(response => response.json())
+                                .then(data => {
+                                    let postsHTML = data.items.map(post => `
+                                        <div class="blog-post">
+                                            <h3><a href="${post.link}" target="_blank">${post.title}</a ></h3>
+                                                <p><strong>Date:</strong> ${new Date(post.pubDate).toDateString()}</p>
+                                        </div>
+                                    `).join("");
+                                    document.getElementById("medium-posts").innerHTML = postsHTML;
+                                })
+                                .catch(error => console.error("Error fetching Medium posts:", error));
+                        </script>
+                    </div>
+                </div>
+        </section>
+    </header>
+
+
+    <footer>
+        <p>Made with <3 by ITHI</p>
+                <p>&copy; 2025 ITHI</p>
+    </footer>
+
+    <script src="scripts/script2.js"></script>
+</body>
+
+</html>

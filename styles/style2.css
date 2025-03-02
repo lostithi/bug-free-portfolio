@@ -1,0 +1,203 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    background-size: auto;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  
+  .navbar {
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    padding: 20px 50px;
+    z-index: 100;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-container img {
+    height: 45px;
+    width: auto; /* Adjust width based on height */
+    border-radius: 10px; 
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    padding-right: 180px;
+  }
+  
+  .nav-links li a {
+    color: #d9d9d9;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: #ff7e5f ;
+  }
+  
+  /* Change text color to black when inside About section */
+  .navbar.black-text .nav-links li a {
+    color: black;
+  }
+  
+  /* Change text back to the initial color in Projects section */
+  .navbar.default-text .nav-links li a {
+    color: #d9d9d9;
+  }
+  .home-section {
+    height: 100vh; /* Full viewport height */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    text-align: center;
+    color: #a27e7e;
+    flex-direction: column;
+    padding-top: 120px;
+    position: relative;
+    overflow: hidden; /* Prevent content overflow */
+  }
+  
+  .home-container {
+      position: relative;
+      z-index: 1;
+      color: white;
+      padding: 0 20px;
+      height: 100%; /* Ensure it fills the entire height of the parent */
+      display: flex; /* If you want content to center vertically within */
+      flex-direction: column;
+      justify-content: center; /* Center vertically */
+      align-items: center; /* Center horizontally */
+  }
+  
+  .home-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure the background image covers the full width */
+    height: 100%; /* Ensure the background image covers the full height */
+    opacity: 0.6;  /* Optional: Adjust transparency */
+    z-index: -1; /* Sends the image to the background */
+  }
+  
+  .home-container h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .home-container p {
+    font-size: 1.5rem;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #d9d9d9;
+  }
+  
+/* Blog Container */
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+.blog-date{
+    text-align: left;
+}
+
+/* Blog Post Styling */
+.blog-post {
+    background: burlywood;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 350px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* New Hover Effect */
+.blog-post:hover {
+    transform: translateY(-10px) rotate(1deg); /* Lifts up and slightly tilts */
+    box-shadow: 0px 15px 25px rgba(0, 115, 230, 0.3); /* Soft glow effect */
+}
+
+/* Glowing Border Effect on Hover */
+.blog-post::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: border-color 0.4s ease;
+}
+
+.blog-post:hover::before {
+    border-color: rgba(0, 115, 230, 0.6); /* Appears when hovered */
+}
+
+/* Blog Title */
+.blog-post h3 {
+    text-align: left;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+/* Blog Title Link */
+.blog-post h3 a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.blog-post h3 a:hover {
+    color: #ffffff;
+}
+
+.blog-post p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Smooth fade-in with staggered effect */
+.blog-post {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+    animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Staggered Animation for Multiple Blog Posts */
+.blog-post:nth-child(1) { animation-delay: 0.2s; }
+.blog-post:nth-child(2) { animation-delay: 0.4s; }
+.blog-post:nth-child(3) { animation-delay: 0.6s; }
