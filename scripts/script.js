@@ -21,6 +21,16 @@ ScrollReveal().reveal('.home-container', {
     duration: 1000,
     easing: 'ease-out',
   });
+  
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
   window.addEventListener("scroll", function() {
     const navbar = document.querySelector(".navbar");
     const aboutSection = document.querySelector("#about");
