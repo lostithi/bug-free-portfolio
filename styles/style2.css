@@ -5,6 +5,7 @@ body, html {
   height: 100%;
   background-color: black;
   color: #d9d9d9;
+  scroll-behavior: smooth;
 }
 
 /* Ensure full page layout */
