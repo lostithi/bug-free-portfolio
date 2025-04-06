@@ -28,10 +28,19 @@
             <header>
                 <section id="home" class="home-section">
                     <div class="home-container">
-                        <h1>BLOGS</h1>
-                        <p>Some of my blogs are listed here:)</p>
+                        <div class="blog-header">
+                            <div class="blog-background-image">
+                                <h1>BLOGS</h1>
+                                <p>Some of my blogs are listed here :)</p>
+                            </div>
+                            <div class="blog_text_image">
+                                <img src="files/New folder/download.jpg" alt="blog.jpg">
+                            </div>
+                        </div>
+                
+                        <!-- Blogs List -->
                         <div class="blogs-container">
-                            <div class="project-card">
+                            <div class="blog-card">
                                 <div id="medium-posts"></div>
                                 <script>
                                     fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@legalithi")
